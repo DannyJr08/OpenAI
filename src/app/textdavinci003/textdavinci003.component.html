@@ -1,0 +1,21 @@
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/dog.png"/>
+    </Head>
+
+    <main class="main">
+        <img src="/assets/dog.png" class="icon" />
+        <h3>Name my pet</h3>
+        <form>
+            <input
+                type="text"
+                name="animal"
+                placeholder="Enter an animal"
+                [(ngModel)] = 'pet'
+            />
+            <input type="button" value="Generate names" (click)="postCompletition()" />
+        </form>
+        <div class="result">{{result}}</div>
+    </main>
+</div>
