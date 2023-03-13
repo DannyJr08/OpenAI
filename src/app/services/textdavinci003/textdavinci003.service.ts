@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs/';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class Textdavinci003Service {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer <key-here>'
+      'Authorization': `Bearer ${environment.contentful.OpenAIAPIKey}`
     })
   }
 

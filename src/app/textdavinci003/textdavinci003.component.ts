@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Textdavinci003Service } from '../services/textdavinci003.service';
+import { Textdavinci003Service } from '../services/textdavinci003/textdavinci003.service';
 
 @Component({
   selector: 'app-textdavinci003',
