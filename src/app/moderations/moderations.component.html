@@ -1,1 +1,29 @@
-<p>moderations works!</p>
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/dog.png"/>
+    </Head>
+
+    <main class="main">
+        <img src="/assets/img/dog.png" class="icon" alt="dog"/>
+        <h3>Name my pet</h3>
+        <form>
+            <input
+                type="text"
+                name="input"
+                placeholder="Write something politcally incorrect"
+                [(ngModel)] = 'input'
+            />
+            <input type="button" value="¿How politcally incorrect is it?" (click)="postCompletition()" />
+        </form>
+        <div *ngIf="result.llamada" class="result">
+            <p>Hate: {{result.hate}}</p>
+            <p>Hate/threatening: {{result.hate_threatening}}</p>
+            <p>Self-harm: {{result.self_harm}}</p>
+            <p>Sexual: {{result.sexual}}</p>
+            <p>Sexual/minors: {{result.sexual_minors}}</p>
+            <p>Violence: {{result.violence}}</p>
+            <p>Violence/graphics: {{result.violence_graphic}}</p>
+        </div>
+    </main>
+</div>
