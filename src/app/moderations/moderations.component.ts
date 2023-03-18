@@ -43,14 +43,14 @@ export class ModerationsComponent implements OnInit {
       this.moderations.postCompletion(payload)
       .subscribe((data: any) => {
         // alert(JSON.stringify(data));
-        console.log(data);
+        console.log(data.results[0]);
         this.result.hate = data.results[0].categories.hate;
-        this.result.hate_threatening = data.results[0].categories.hate;
-        this.result.self_harm = data.results[0].categories.hate;
+        this.result.hate_threatening = data.results[0].categories["hate/threatening"];
+        this.result.self_harm = data.results[0].categories["self-harm"];
         this.result.sexual = data.results[0].categories.sexual;
-        this.result.sexual_minors = data.results[0].categories.sexual;
+        this.result.sexual_minors = data.results[0].categories["sexual/minors"];
         this.result.violence = data.results[0].categories.violence;
-        this.result.violence_graphic = data.results[0].categories.violence;
+        this.result.violence_graphic = data.results[0].categories["violence/graphic"];
         this.result.llamada = true;
       });
   }
